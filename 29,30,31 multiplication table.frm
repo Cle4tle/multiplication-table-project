@@ -540,7 +540,7 @@ Function textoutinit()
         Cmd_multnum(i).Caption = ("¡Á " & i + 1) 'set multnum button caption
     Next
 End Function
-Private Sub Frm_Load()
+Private Sub Form_Load()
     textoutinit
     For i = 0 To 9  'populate array and change numpad caption
         ls(i) = i
