@@ -4,28 +4,10 @@ Begin VB.Form Form1
    ClientHeight    =   6810
    ClientLeft      =   2835
    ClientTop       =   2325
-   ClientWidth     =   10065
+   ClientWidth     =   14490
    LinkTopic       =   "Form1"
    ScaleHeight     =   6810
-   ScaleWidth      =   10065
-   Begin VB.TextBox Txt_output 
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   19.5
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   5895
-      Left            =   6840
-      MultiLine       =   -1  'True
-      TabIndex        =   29
-      Text            =   "29,30,31 multiplication table.frx":0000
-      Top             =   360
-      Width           =   3015
-   End
+   ScaleWidth      =   14490
    Begin VB.CommandButton Cmd_x12 
       Caption         =   "x 12"
       Height          =   375
@@ -250,6 +232,22 @@ Begin VB.Form Form1
       Top             =   4680
       Width           =   855
    End
+   Begin VB.Label Lbl_output 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   19.5
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   5895
+      Left            =   6840
+      TabIndex        =   29
+      Top             =   360
+      Width           =   2775
+   End
    Begin VB.Label Lbl_number 
       Alignment       =   2  'Center
       Caption         =   "29, 30, 31"
@@ -292,60 +290,69 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-'I may actually not need to have invisible math and visible math, and can just use the invisible math for display
-'Option Explicit
-Dim innum As Double 'input number for typed input
-Dim keypadi As Double 'invisible math
-Dim keypads As String 'visible math
+Option Explicit
 Dim ls(9) As Integer 'array for the values of the buttons
 Dim i As Integer 'for loop variable
-
-
-
-Private Sub Cmd_0_Click()
-Txt_input.Text = keypads & vbNewLine & keypadi '"keypadi" added for debugging, will remove later
-keypadi = ls(0) 'adds 0 to invis math probably uneeded
-keypads = keypads + "0" 'adds 0 to visible math
-Txt_input.Text = keypads & vbNewLine & keypadi
-
-End Sub
-
-Private Sub Cmd_backspace_Click()
-'unfinished
-End Sub
-
-Private Sub Cmd_Clr_Click()
-Cls 'clears form probably uneeded
-Txt_input.Text = "" 'clears textbox
-Ls_answer.Clear 'clears listbox
-End Sub
-
-Private Sub Cmd_dec_Click()
-Txt_input.Text = keypads & vbNewLine & keypadi
-keypadi = keypadi + 0#  'adds decimal point to invis math
-keypads = keypads + "." 'adds decimal point to visible math
-Txt_input.Text = keypads & vbNewLine & keypadi
-End Sub
-
-Private Sub Cmd_x1_Click()
-Ls_answer.AddItem (" = " & Txt_input.Text)
-End Sub
-
+Function textoutinit() 'clears output textbox and adds =
+    Lbl_output.Caption = "=" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " ="
+End Function
 Private Sub Form_Load()
-Txt_output.Text = " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " =" & vbNewLine & " ="
-
-For i = 0 To 9 Step 1 'for loop to populate array
-    ls(i) = i
-    Print ls(i)
-    Next
+    textoutinit
+    For i = 0 To 9 Step 1 'for loop to populate array
+        ls(i) = i
+        Print ls(i)
+        Next
+End Sub
+Private Sub Cmd_backspace_Click()
+    Txt_input.SetFocus
+    Txt_input.SelStart = Len(Txt_input.Text)
+    SendKeys ("{BACKSPACE}")
+End Sub
+Private Sub Cmd_Clr_Click()
+    Txt_input.Text = "" 'clears textbox
+    textoutinit
+End Sub
+Private Sub Cmd_0_Click()
+    Txt_input.Text = Txt_input.Text + CStr(ls(0))
+End Sub
+Private Sub Cmd_1_Click()
+    Txt_input.Text = Txt_input.Text + CStr(ls(1))
+End Sub
+Private Sub Cmd_2_click()
+    Txt_input.Text = Txt_input.Text + CStr(ls(2))
+End Sub
+Private Sub Cmd_3_click()
+    Txt_input.Text = Txt_input.Text + CStr(ls(3))
+End Sub
+Private Sub Cmd_4_click()
+    Txt_input.Text = Txt_input.Text + CStr(ls(4))
+End Sub
+Private Sub Cmd_5_click()
+    Txt_input.Text = Txt_input.Text + CStr(ls(5))
+End Sub
+Private Sub Cmd_6_click()
+    Txt_input.Text = Txt_input.Text + CStr(ls(6))
+End Sub
+Private Sub Cmd_7_click()
+    Txt_input.Text = Txt_input.Text + CStr(ls(7))
+End Sub
+Private Sub Cmd_8_click()
+    Txt_input.Text = Txt_input.Text + CStr(ls(8))
+End Sub
+Private Sub Cmd_9_click()
+    Txt_input.Text = Txt_input.Text + CStr(ls(9))
+End Sub
+Private Sub Cmd_dec_Click()
+    Txt_input.Text = Txt_input.Text + "."
+End Sub
+Private Sub Txt_input_KeyPress(KeyAscii As Integer) 'rejects non-numeral inputs
+    Select Case KeyAscii
+            Case vbKey0 To vbKey9, vbKeyBack, vbKeyClear, vbKeyDelete, _
+            vbKeyLeft, vbKeyRight, vbKeyUp, vbKeyDown, vbKeyTab, vbKeyBack
+                If KeyAscii = 46 Then If InStr(1, Txt_input.Text, ".") Then KeyAscii = 0
+            Case Else
+                KeyAscii = 0
+                Beep
+        End Select
 End Sub
 
-Private Sub Txt_input_KeyPress(KeyAscii As Integer) 'attempt at rejecting non numeral inputs
-Select Case KeyAscii
-        Case 46
-            If InStr(1, txtShift1, ".") > 0 Then KeyAscii = 0
-        Case 48 To 57
-        Case Else
-            KeyAscii = 0
-    End Select
-End Sub
