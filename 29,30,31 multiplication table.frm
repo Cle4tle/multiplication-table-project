@@ -500,9 +500,9 @@ Begin VB.Form Frm1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   120
+      Left            =   3120
       TabIndex        =   8
-      Top             =   6120
+      Top             =   6360
       Width           =   4935
    End
    Begin VB.Label Lbl_title 
