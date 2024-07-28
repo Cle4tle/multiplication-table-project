@@ -407,6 +407,7 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim ls(9) As Integer 'array for the values of the buttons
 Dim i As Integer 'for loop var
+Dim c As Integer 'counter
 Function textoutinit()
     For i = 0 To 11 Step 1
         Lbl_output(i).FontSize = 19 'change lbl fontsize
@@ -417,6 +418,7 @@ Function textoutinit()
 End Function
 Private Sub Form_Load()
     textoutinit
+    c = 0
     For i = 0 To 9 Step 1 'populate array and change numpad caption
         ls(i) = i
         Cmd_numpad(i).Caption = (i)
@@ -436,6 +438,17 @@ Private Sub Cmd_multiply_Click()
         Lbl_output(i).Caption = "= " & Val(Txt_input.Text) * (i + 1)
     Next
 End Sub
+Private Sub Cmd_neg_Click()
+    c = c + 1
+    If c Mod 2 <> 0 Then
+        Txt_input.Text = "-" + Txt_input.Text
+        
+    ElseIf c Mod 2 = 0 Then
+        Txt_input.SetFocus
+        Txt_input.SelStart = 1
+        SendKeys ("{BS}")
+    End If
+End Sub
 Private Sub Cmd_numpad_Click(Index As Integer)
     Txt_input.Text = Txt_input.Text + CStr(ls(Index))
 End Sub
@@ -448,8 +461,9 @@ End Sub
 Private Sub Txt_input_KeyPress(KeyAscii As Integer) 'rejects non-numeral inputs
     Select Case KeyAscii
             Case vbKey0 To vbKey9, vbKeyBack, vbKeyClear, vbKeyDelete, _
-            vbKeyLeft, vbKeyRight, vbKeyUp, vbKeyDown, vbKeyTab, vbKeyBack
+            vbKeyLeft, vbKeyRight, vbKeyUp, vbKeyDown, vbKeyTab, vbKeyBack, 45
                 If KeyAscii = 46 Then If InStr(1, Txt_input.Text, ".") Then KeyAscii = 0
+                If KeyAscii = 45 Then If InStr(1, Txt_input.Text, "-") Then KeyAscii = 0
             Case Else
                 KeyAscii = 0
                 Beep
