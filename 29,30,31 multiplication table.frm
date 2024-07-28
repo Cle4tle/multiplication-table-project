@@ -1,6 +1,7 @@
 VERSION 5.00
-Begin VB.Form Form1 
-   Caption         =   "Form1"
+Begin VB.Form Frm1 
+   AutoRedraw      =   -1  'True
+   Caption         =   "³Ë·¨±í 29, 30, 31"
    ClientHeight    =   6810
    ClientLeft      =   2835
    ClientTop       =   2325
@@ -13,16 +14,16 @@ Begin VB.Form Form1
       Height          =   495
       Left            =   3720
       TabIndex        =   42
-      Top             =   3600
+      Top             =   4800
       Width           =   975
    End
    Begin VB.CommandButton Cmd_neg 
       Caption         =   "-"
       Height          =   495
-      Left            =   3720
+      Left            =   2640
       TabIndex        =   41
       Top             =   5400
-      Width           =   975
+      Width           =   855
    End
    Begin VB.CommandButton Cmd_multnum 
       Caption         =   "x 1"
@@ -226,7 +227,7 @@ Begin VB.Form Form1
       Height          =   495
       Left            =   3720
       TabIndex        =   4
-      Top             =   4800
+      Top             =   3600
       Width           =   975
    End
    Begin VB.TextBox Txt_input 
@@ -248,10 +249,10 @@ Begin VB.Form Form1
    Begin VB.CommandButton Cmd_backspace 
       Caption         =   "¡û"
       Height          =   495
-      Left            =   2640
+      Left            =   3720
       TabIndex        =   2
       Top             =   5400
-      Width           =   855
+      Width           =   975
    End
    Begin VB.CommandButton Cmd_dec 
       Caption         =   "."
@@ -488,9 +489,9 @@ Begin VB.Form Form1
    End
    Begin VB.Label Lbl_number 
       Alignment       =   2  'Center
-      Caption         =   "Äª·áÔó(29), Éò¿¡´ï(30), ´÷ÓÚ«|(31)"
+      Caption         =   "Äª·áÔó(29),Éò¿¡´ï(30),´÷ÓÚ«|(31)"
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "¿¬Ìå"
          Size            =   15
          Charset         =   0
          Weight          =   400
@@ -498,7 +499,7 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
+      Height          =   375
       Left            =   120
       TabIndex        =   8
       Top             =   6120
@@ -523,7 +524,7 @@ Begin VB.Form Form1
       Width           =   4215
    End
 End
-Attribute VB_Name = "Form1"
+Attribute VB_Name = "Frm1"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -539,7 +540,7 @@ Function textoutinit()
         Cmd_multnum(i).Caption = ("¡Á " & i + 1) 'set multnum button caption
     Next
 End Function
-Private Sub Form_Load()
+Private Sub Frm_Load()
     textoutinit
     For i = 0 To 9  'populate array and change numpad caption
         ls(i) = i
@@ -590,4 +591,3 @@ Private Sub Txt_input_KeyPress(KeyAscii As Integer) 'rejects non-numeral inputs
                 Beep
         End Select
 End Sub
-
