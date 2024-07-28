@@ -4,15 +4,31 @@ Begin VB.Form Form1
    ClientHeight    =   6810
    ClientLeft      =   2835
    ClientTop       =   2325
-   ClientWidth     =   14490
+   ClientWidth     =   8175
    LinkTopic       =   "Form1"
    ScaleHeight     =   6810
-   ScaleWidth      =   14490
+   ScaleWidth      =   8175
+   Begin VB.CommandButton Cmd_ce 
+      Caption         =   "Clear Everything"
+      Height          =   495
+      Left            =   3720
+      TabIndex        =   42
+      Top             =   3600
+      Width           =   975
+   End
+   Begin VB.CommandButton Cmd_neg 
+      Caption         =   "-"
+      Height          =   495
+      Left            =   3720
+      TabIndex        =   41
+      Top             =   5400
+      Width           =   975
+   End
    Begin VB.CommandButton Cmd_multnum 
       Caption         =   "x 1"
       Height          =   375
       Index           =   11
-      Left            =   6120
+      Left            =   5160
       TabIndex        =   40
       Top             =   5760
       Width           =   615
@@ -21,7 +37,7 @@ Begin VB.Form Form1
       Caption         =   "x 1"
       Height          =   375
       Index           =   10
-      Left            =   6120
+      Left            =   5160
       TabIndex        =   39
       Top             =   5280
       Width           =   615
@@ -30,7 +46,7 @@ Begin VB.Form Form1
       Caption         =   "x 1"
       Height          =   375
       Index           =   9
-      Left            =   6120
+      Left            =   5160
       TabIndex        =   38
       Top             =   4800
       Width           =   615
@@ -39,7 +55,7 @@ Begin VB.Form Form1
       Caption         =   "x 1"
       Height          =   375
       Index           =   8
-      Left            =   6120
+      Left            =   5160
       TabIndex        =   37
       Top             =   4320
       Width           =   615
@@ -48,7 +64,7 @@ Begin VB.Form Form1
       Caption         =   "x 1"
       Height          =   375
       Index           =   7
-      Left            =   6120
+      Left            =   5160
       TabIndex        =   36
       Top             =   3840
       Width           =   615
@@ -57,7 +73,7 @@ Begin VB.Form Form1
       Caption         =   "x 1"
       Height          =   375
       Index           =   6
-      Left            =   6120
+      Left            =   5160
       TabIndex        =   35
       Top             =   3360
       Width           =   615
@@ -66,7 +82,7 @@ Begin VB.Form Form1
       Caption         =   "x 1"
       Height          =   375
       Index           =   5
-      Left            =   6120
+      Left            =   5160
       TabIndex        =   34
       Top             =   2880
       Width           =   615
@@ -75,7 +91,7 @@ Begin VB.Form Form1
       Caption         =   "x 1"
       Height          =   375
       Index           =   4
-      Left            =   6120
+      Left            =   5160
       TabIndex        =   33
       Top             =   2400
       Width           =   615
@@ -84,7 +100,7 @@ Begin VB.Form Form1
       Caption         =   "x 1"
       Height          =   375
       Index           =   3
-      Left            =   6120
+      Left            =   5160
       TabIndex        =   32
       Top             =   1920
       Width           =   615
@@ -93,7 +109,7 @@ Begin VB.Form Form1
       Caption         =   "x 1"
       Height          =   375
       Index           =   2
-      Left            =   6120
+      Left            =   5160
       TabIndex        =   31
       Top             =   1440
       Width           =   615
@@ -102,7 +118,7 @@ Begin VB.Form Form1
       Caption         =   "x 1"
       Height          =   375
       Index           =   1
-      Left            =   6120
+      Left            =   5160
       TabIndex        =   30
       Top             =   960
       Width           =   615
@@ -192,30 +208,30 @@ Begin VB.Form Form1
       Caption         =   "x 1"
       Height          =   375
       Index           =   0
-      Left            =   6120
+      Left            =   5160
       TabIndex        =   7
       Top             =   480
       Width           =   615
    End
    Begin VB.CommandButton Cmd_Clr 
       Caption         =   "Clear"
-      Height          =   1095
-      Left            =   3840
+      Height          =   495
+      Left            =   3720
       TabIndex        =   5
-      Top             =   4800
-      Width           =   1455
+      Top             =   4200
+      Width           =   975
    End
    Begin VB.CommandButton Cmd_multiply 
       Caption         =   "Multiply"
-      Height          =   1095
-      Left            =   3840
+      Height          =   495
+      Left            =   3720
       TabIndex        =   4
-      Top             =   3600
-      Width           =   1455
+      Top             =   4800
+      Width           =   975
    End
    Begin VB.TextBox Txt_input 
       BeginProperty Font 
-         Name            =   "MS Sans Serif"
+         Name            =   "Liberation Sans"
          Size            =   15
          Charset         =   0
          Weight          =   400
@@ -227,7 +243,7 @@ Begin VB.Form Form1
       Left            =   480
       TabIndex        =   3
       Top             =   1320
-      Width           =   4935
+      Width           =   4215
    End
    Begin VB.CommandButton Cmd_backspace 
       Caption         =   "¡û"
@@ -256,115 +272,223 @@ Begin VB.Form Form1
    End
    Begin VB.Label Lbl_output 
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Liberation Sans"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Index           =   11
-      Left            =   6840
+      Left            =   5880
       TabIndex        =   20
       Top             =   5760
       Width           =   1815
    End
    Begin VB.Label Lbl_output 
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Liberation Sans"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Index           =   10
-      Left            =   6840
+      Left            =   5880
       TabIndex        =   19
       Top             =   5280
       Width           =   1815
    End
    Begin VB.Label Lbl_output 
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Liberation Sans"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Index           =   9
-      Left            =   6840
+      Left            =   5880
       TabIndex        =   18
       Top             =   4800
       Width           =   1815
    End
    Begin VB.Label Lbl_output 
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Liberation Sans"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Index           =   8
-      Left            =   6840
+      Left            =   5880
       TabIndex        =   17
       Top             =   4320
       Width           =   1815
    End
    Begin VB.Label Lbl_output 
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Liberation Sans"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Index           =   7
-      Left            =   6840
+      Left            =   5880
       TabIndex        =   16
       Top             =   3840
       Width           =   1815
    End
    Begin VB.Label Lbl_output 
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Liberation Sans"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Index           =   6
-      Left            =   6840
+      Left            =   5880
       TabIndex        =   15
       Top             =   3360
       Width           =   1815
    End
    Begin VB.Label Lbl_output 
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Liberation Sans"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Index           =   5
-      Left            =   6840
+      Left            =   5880
       TabIndex        =   14
       Top             =   2880
       Width           =   1815
    End
    Begin VB.Label Lbl_output 
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Liberation Sans"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Index           =   4
-      Left            =   6840
+      Left            =   5880
       TabIndex        =   13
       Top             =   2400
       Width           =   1815
    End
    Begin VB.Label Lbl_output 
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Liberation Sans"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Index           =   3
-      Left            =   6840
+      Left            =   5880
       TabIndex        =   12
       Top             =   1920
       Width           =   1815
    End
    Begin VB.Label Lbl_output 
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Liberation Sans"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Index           =   2
-      Left            =   6840
+      Left            =   5880
       TabIndex        =   11
       Top             =   1440
       Width           =   1815
    End
    Begin VB.Label Lbl_output 
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Liberation Sans"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Index           =   1
-      Left            =   6840
+      Left            =   5880
       TabIndex        =   10
       Top             =   960
       Width           =   1815
    End
    Begin VB.Label Lbl_output 
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Liberation Sans"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Index           =   0
-      Left            =   6840
+      Left            =   5880
       TabIndex        =   9
       Top             =   480
       Width           =   1815
    End
    Begin VB.Label Lbl_number 
       Alignment       =   2  'Center
-      Caption         =   "29, 30, 31"
+      Caption         =   "Äª·áÔó(29), Éò¿¡´ï(30), ´÷ÓÚ«|(31)"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   15
@@ -375,10 +499,10 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   4200
+      Left            =   120
       TabIndex        =   8
       Top             =   6120
-      Width           =   1455
+      Width           =   4935
    End
    Begin VB.Label Lbl_title 
       Alignment       =   2  'Center
@@ -396,7 +520,7 @@ Begin VB.Form Form1
       Left            =   480
       TabIndex        =   6
       Top             =   360
-      Width           =   4935
+      Width           =   4215
    End
 End
 Attribute VB_Name = "Form1"
@@ -407,9 +531,8 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim ls(9) As Integer 'array for the values of the buttons
 Dim i As Integer 'for loop var
-Dim c As Integer 'counter
 Function textoutinit()
-    For i = 0 To 11 Step 1
+    For i = 0 To 11
         Lbl_output(i).FontSize = 19 'change lbl fontsize
         Lbl_output(i).Caption = "=" 'clear output
         Lbl_output(i).AutoSize = True 'set autosize
@@ -418,8 +541,7 @@ Function textoutinit()
 End Function
 Private Sub Form_Load()
     textoutinit
-    c = 0
-    For i = 0 To 9 Step 1 'populate array and change numpad caption
+    For i = 0 To 9  'populate array and change numpad caption
         ls(i) = i
         Cmd_numpad(i).Caption = (i)
     Next
@@ -431,23 +553,20 @@ Private Sub Cmd_backspace_Click()
 End Sub
 Private Sub Cmd_Clr_Click()
     Txt_input.Text = "" 'clears textbox
+End Sub
+Private Sub Cmd_ce_Click()
+    Txt_input.Text = ""
     textoutinit
 End Sub
+Private Sub Cmd_neg_Click()
+    If InStr(1, Txt_input.Text, "-") = False Then
+        Txt_input.Text = "-" + Txt_input.Text
+    End If
+End Sub
 Private Sub Cmd_multiply_Click()
-    For i = 0 To 11 Step 1
+    For i = 0 To 11
         Lbl_output(i).Caption = "= " & Val(Txt_input.Text) * (i + 1)
     Next
-End Sub
-Private Sub Cmd_neg_Click()
-    c = c + 1
-    If c Mod 2 <> 0 Then
-        Txt_input.Text = "-" + Txt_input.Text
-        
-    ElseIf c Mod 2 = 0 Then
-        Txt_input.SetFocus
-        Txt_input.SelStart = 1
-        SendKeys ("{BS}")
-    End If
 End Sub
 Private Sub Cmd_numpad_Click(Index As Integer)
     Txt_input.Text = Txt_input.Text + CStr(ls(Index))
@@ -456,12 +575,14 @@ Private Sub Cmd_multnum_Click(Index As Integer)
     Lbl_output(Index).Caption = "= " & Val(Txt_input.Text) * (Index + 1)
 End Sub
 Private Sub Cmd_dec_Click()
-    Txt_input.Text = Txt_input.Text + "."
+    If InStr(1, Txt_input.Text, ".") = False Then
+        Txt_input.Text = Txt_input.Text + "."
+    End If
 End Sub
+
 Private Sub Txt_input_KeyPress(KeyAscii As Integer) 'rejects non-numeral inputs
     Select Case KeyAscii
-            Case vbKey0 To vbKey9, vbKeyBack, vbKeyClear, vbKeyDelete, _
-            vbKeyLeft, vbKeyRight, vbKeyUp, vbKeyDown, vbKeyTab, vbKeyBack, 45
+            Case vbKey0 To vbKey9, vbKeyBack, vbKeyClear, vbKeyDelete, vbKeyLeft, vbKeyRight, vbKeyUp, vbKeyDown, vbKeyTab, vbKeyBack, 45
                 If KeyAscii = 46 Then If InStr(1, Txt_input.Text, ".") Then KeyAscii = 0
                 If KeyAscii = 45 Then If InStr(1, Txt_input.Text, "-") Then KeyAscii = 0
             Case Else
